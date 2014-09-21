@@ -2,17 +2,11 @@ buildscript {
     repositories {
         mavenCentral()
     }
-
-
     dependencies {
         classpath 'com.android.tools.build:gradle:0.12.2'
         classpath 'com.github.dcendents:android-maven-plugin:1.0'
-
     }
 }
-
-
-
 
 apply plugin: 'android-library'
 apply plugin: 'android-maven'
@@ -29,10 +23,9 @@ dependencies {
     compile 'com.twotoasters.jazzylistview:library:1.0.1'
 }
 
-
 android {
 
-    dexOptions{
+    dexOptions {
         preDexLibraries = false
     }
 
@@ -44,7 +37,6 @@ android {
     lintOptions {
         abortOnError false
     }
-
 
     compileSdkVersion 20
     buildToolsVersion '20'
@@ -58,12 +50,8 @@ android {
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
         }
-
     }
-
 }
-
-
 
 apply plugin: 'maven'
 uploadArchives {
@@ -73,4 +61,3 @@ uploadArchives {
         }
     }
 }
-//task install(dependsOn: uploadArchives)

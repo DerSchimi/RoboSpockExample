@@ -1,14 +1,12 @@
 package de.derschimi.applibrary;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,6 +21,7 @@ public class ActionAdapter extends ArrayAdapter<String> {
 
 
     protected FragmentActivity parentFragmentActivity;
+
     public ActionAdapter(Context context, FragmentActivity activity) {
         super(context, 0);
         createItemsAndAddToList(context);
@@ -30,13 +29,11 @@ public class ActionAdapter extends ArrayAdapter<String> {
         this.parentFragmentActivity = activity;
 
 
-
     }
-    public void createItemsAndAddToList(Context context){
+
+    public void createItemsAndAddToList(Context context) {
         list.add("Fragment 1");
         list.add("Fragment 2");
-
-
 
 
     }
@@ -65,14 +62,12 @@ public class ActionAdapter extends ArrayAdapter<String> {
         return list.size();
     }
 
-    public List<Fragment> getFragments(){
+    public List<Fragment> getFragments() {
         List<Fragment> frags = new ArrayList<Fragment>();
         frags.add(new AppFragment("Fragment 1"));
         frags.add(new AppFragment("Fragment 2"));
         return frags;
     }
-
-
 
 
 }

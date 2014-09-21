@@ -1,7 +1,6 @@
 buildscript {
     repositories {
         mavenCentral()
-
     }
 
     dependencies {
@@ -9,9 +8,7 @@ buildscript {
     }
 }
 
-
 repositories {
     mavenCentral()
-	    mavenLocal()
-
+    mavenLocal()
 }

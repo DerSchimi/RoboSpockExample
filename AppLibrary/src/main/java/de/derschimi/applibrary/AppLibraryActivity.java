@@ -1,34 +1,22 @@
 package de.derschimi.applibrary;
 
-import android.app.Activity;
-import android.app.PendingIntent;
-import android.content.*;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.RemoteException;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
-import org.json.JSONException;
-import org.json.JSONObject;
-import android.support.v7.app.ActionBarActivity;
-
-
-import java.util.ArrayList;
 
 public abstract class AppLibraryActivity extends ActionBarActivity {
     public ActionBarDrawerToggle mDrawerToggle;
     public DrawerLayout mDrawerLayout;
+    ActionAdapter adapter;
     private ListView mDrawerList;
 
     @Override
@@ -44,7 +32,6 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
         showFragment(0);
     }
 
-
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -59,16 +46,17 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    ActionAdapter adapter;
-    public ActionAdapter getAdapter(){
-        if (adapter == null){
-            adapter = new ActionAdapter(getApplicationContext(),this);
+    public ActionAdapter getAdapter() {
+        if (adapter == null) {
+            adapter = new ActionAdapter(getApplicationContext(), this);
         }
         return adapter;
 
     }
 
-    /** Swaps fragments in the main content view */
+    /**
+     * Swaps fragments in the main content view
+     */
     public void showFragment(int position) {
         Fragment fragment = getAdapter().getFragments().get(position);
         // Insert the fragment by replacing any existing fragment
@@ -85,7 +73,7 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 
-    private void initMenu(){
+    private void initMenu() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -102,27 +90,7 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
     }
 
-
-    class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView parent, View view, int position, long id) {
-            showFragment(position);
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
     public abstract boolean optionItemSelected(MenuItem item);
-
-
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
@@ -135,15 +103,17 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
 
     }
 
-
-
     public void requestFeatures(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_PROGRESS);
 
     }
 
-
-
+    class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView parent, View view, int position, long id) {
+            showFragment(position);
+        }
+    }
 
 
 }

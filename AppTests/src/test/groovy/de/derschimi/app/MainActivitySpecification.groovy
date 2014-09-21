@@ -23,5 +23,4 @@ class MainActivitySpecification extends RoboSpecification {
     }
 
 
-
 }

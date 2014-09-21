@@ -2,7 +2,6 @@ package de.derschimi.applibrary;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.*;
 import android.widget.TextView;
 
 /**
@@ -11,9 +10,9 @@ import android.widget.TextView;
 public class AppFragment extends Fragment {
 
 
-
     private String name;
-    public AppFragment(String name){
+
+    public AppFragment(String name) {
         this.name = name;
     }
 
@@ -23,7 +22,7 @@ public class AppFragment extends Fragment {
         setHasOptionsMenu(true);
         View v = inflater.inflate(R.layout.fragment, container, false);
 
-        TextView tv = (TextView)v.findViewById(R.id.fragmentname);
+        TextView tv = (TextView) v.findViewById(R.id.fragmentname);
         tv.setText(name);
         return v;
     }
