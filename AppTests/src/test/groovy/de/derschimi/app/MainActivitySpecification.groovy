@@ -21,7 +21,7 @@ class MainActivitySpecification extends RoboSpecification {
         then:
         "Account{name='JohnWhite', password='24a28dbe'}" == tv.getText()
     }
-  
+
 
 
 }
