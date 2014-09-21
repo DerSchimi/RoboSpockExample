@@ -1,0 +1,4 @@
+include 'AppLibrary'
+include 'App'
+project(':App').name = 'App'
+include 'AppTests'

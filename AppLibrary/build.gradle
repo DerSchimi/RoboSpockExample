@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.2'
+        classpath 'com.github.dcendents:android-maven-plugin:1.0'
+
+    }
+}
+
+
+
+
+apply plugin: 'android-library'
+apply plugin: 'android-maven'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services:4.3+'
+    compile 'com.android.support:appcompat-v7:18.0.+'
+    compile 'com.tjerkw.slideexpandable:library:1.0.0-SNAPSHOT@aar'
+    compile 'com.twotoasters.jazzylistview:library:1.0.1'
+}
+
+
+android {
+
+    dexOptions{
+        preDexLibraries = false
+    }
+
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 20
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+
+    compileSdkVersion 20
+    buildToolsVersion '20'
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            aidl.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+    }
+
+}
+
+
+
+apply plugin: 'maven'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+        }
+    }
+}
+//task install(dependsOn: uploadArchives)

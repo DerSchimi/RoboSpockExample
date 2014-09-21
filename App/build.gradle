@@ -1,0 +1,56 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.11.+'
+        classpath 'com.github.dcendents:android-maven-plugin:1.0'
+
+    }
+}
+
+
+
+apply plugin: 'android'
+apply plugin: 'android-maven'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:18.0.+"
+	compile project(':AppLibrary')
+    compile 'com.twotoasters.jazzylistview:library:1.0.1'
+    compile group: 'com.android.query', name: 'android-query', version: '0.26.7'
+}
+
+android {
+
+
+    dexOptions {
+        preDexLibraries = false
+    }
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 20
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+
+
+    compileSdkVersion 20
+    buildToolsVersion "20"
+
+   
+
+}
+
