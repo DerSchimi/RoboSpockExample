@@ -21,6 +21,7 @@ I want to use this AppTests project to test the App.
 My Software Setup
 =================
 Gradle 1.10
+
 IntelliJ IDEA 13.1.4
 
 
