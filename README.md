@@ -5,7 +5,8 @@ My Android App Setup uses gradle to build an android library project.
 
 These Files are inside the folder AppLibrary.
 https://github.com/DerSchimi/RoboSpockExample/tree/master/App
-This AppLibrary is a simple setup for a generic android app using an ActionbarActivity. I tried to simplify it as much as possible.
+This AppLibrary is a simple setup for a generic android app using an ActionbarActivity. 
+I tried to simplify it as much as possible.
 This android-library conains a few other depenencies like appcompat, aquery...
 
 The App itself is inside the folder App.
