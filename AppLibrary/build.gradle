@@ -62,3 +62,9 @@ uploadArchives {
         }
     }
 }
+
+task zip2jar(type: Zip, dependsOn: "compileReleaseJava") {
+    from 'build/intermediates/classes/release'
+    destinationDir = file('build/libs')
+    extension = "jar"
+}
