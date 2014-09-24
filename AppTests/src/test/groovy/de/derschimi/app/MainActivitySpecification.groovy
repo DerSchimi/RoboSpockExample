@@ -1,26 +1,24 @@
 package de.derschimi.app
 
-import android.widget.TextView
+import android.widget.ListView
 import org.robolectric.Robolectric
-import org.robolectric.annotation.Config
 import pl.polidea.robospock.RoboSpecification
 
 /**
  * Created by daniel on 21.09.2014.
  */
-@Config(manifest = "/App/src/main/AndroidManifest.xml")
 class MainActivitySpecification extends RoboSpecification {
+    def mainActivity
 
-    def "Should say hello world"() {
-        setup:
-        def mainActivity = Robolectric.buildActivity(AppActivity.class).create().get()
+    def "setup"() {
+        mainActivity = Robolectric.buildActivity(AppActivity.class).create().get()
+    }
 
-        when:
-        def tv = (TextView) mainActivity.findViewById(R.id.fragmentname)
-
-        then:
-        "Account{name='JohnWhite', password='24a28dbe'}" == tv.getText()
+    def "should use ListView for left drawer"() {
+        expect:
+        mainActivity.findViewById(R.id.left_drawer) instanceof ListView
     }
 
 
 }
+
