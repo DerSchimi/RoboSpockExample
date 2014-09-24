@@ -33,13 +33,13 @@ android {
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 20
+        targetSdkVersion 18
     }
     lintOptions {
         abortOnError false
     }
 
-    compileSdkVersion 20
+    compileSdkVersion 18
     buildToolsVersion '20'
 
     sourceSets {
