@@ -27,7 +27,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:18.0.+"
     compile project(':AppLibrary')
     compile 'com.twotoasters.jazzylistview:library:1.0.1'
-    compile group: 'com.android.query', name: 'android-query', version: '0.26.7'
+    compile files('libs/android-query.0.26.8')
 }
 
 android {
