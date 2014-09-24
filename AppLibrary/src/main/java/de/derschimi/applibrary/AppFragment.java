@@ -15,6 +15,12 @@ public class AppFragment extends Fragment {
 
     private String name;
 
+    // please note that fragment require empty constructor
+    // it's because android framework will try to recreate your
+    // fragment on configuration changes
+    // if you want to pass argument to a fragment please use
+    // a newInstance pattern just like google does:
+    // http://developer.android.com/reference/android/app/Fragment.html
     public AppFragment(String name) {
         this.name = name;
     }
