@@ -17,9 +17,10 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services:4.3+'
-    compile 'com.android.support:appcompat-v7:18.0.+'
-    compile 'com.tjerkw.slideexpandable:library:1.0.0-SNAPSHOT@aar'
+    compile 'com.google.android.gms:play-services:5.+'
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
+//    compile 'com.tjerkw.slideexpandable:library:1.0.0-SNAPSHOT@aar'
     compile 'com.twotoasters.jazzylistview:library:1.0.1'
 }
 
@@ -32,13 +33,13 @@ android {
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 20
+        targetSdkVersion 18
     }
     lintOptions {
         abortOnError false
     }
 
-    compileSdkVersion 20
+    compileSdkVersion 18
     buildToolsVersion '20'
 
     sourceSets {
@@ -60,4 +61,10 @@ uploadArchives {
             repository url: 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
         }
     }
+}
+
+task zip2jar(type: Zip, dependsOn: "compileReleaseJava") {
+    from 'build/intermediates/classes/release'
+    destinationDir = file('build/libs')
+    extension = "jar"
 }
