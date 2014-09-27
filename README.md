@@ -17,7 +17,7 @@ This App uses AppLibrary to quickly build an android app with two simple Fragmen
 ### Tests
 The folder [AppTests](https://github.com/DerSchimi/RoboSpockExample/tree/master/AppTests) contains some RoboSpock setup. I try to use RoboSpock as a simple test framework for my Android App, but I can't get get the tests running).
 
-I want to use this AppTests project to test the App. 
+
 
 
 My Software Setup
