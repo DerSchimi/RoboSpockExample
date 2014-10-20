@@ -2,7 +2,6 @@ package de.derschimi.app
 
 import android.widget.ListView
 import org.robolectric.Robolectric
-import org.robolectric.annotation.Config
 import pl.polidea.robospock.RoboSpecification
 
 /**
@@ -22,9 +21,20 @@ class MainActivitySpecification extends RoboSpecification {
         mainActivity.findViewById(R.id.left_drawer) instanceof ListView
     }
 
-    def "this test should now fail"() {
+    def "test app title"() {
         expect:
         mainActivity.getTitle().equals("App");
+    }
+
+
+    def "change app title"() {
+
+        when:
+        mainActivity.setTitle("new name")
+
+        then:
+        mainActivity.getTitle().equals("new name");
+
     }
 }
 
