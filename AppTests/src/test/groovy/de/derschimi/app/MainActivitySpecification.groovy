@@ -21,10 +21,10 @@ class MainActivitySpecification extends RoboSpecification {
         expect:
         mainActivity.findViewById(R.id.left_drawer) instanceof ListView
     }
-    def "title should match"() {
+
+    def "this test should now fail"() {
         expect:
         mainActivity.getTitle().equals("App");
     }
-
 }
 

@@ -29,6 +29,7 @@ public abstract class AppLibraryActivity extends ActionBarActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         setContentView(R.layout.main);
         initMenu();
+        setTitle("this will fail");
         showFragment(0);
     }
 
