@@ -3,6 +3,4 @@ jdk: oraclejdk7
 env:
   matrix:
     - ANDROID_TARGET=android-19
-	
-	
 script: ./gradlew test
