@@ -23,7 +23,7 @@ The folder [AppTests](https://github.com/DerSchimi/RoboSpockExample/tree/master/
 My Software Setup
 =================
 - Gradle 1.10
-- IntelliJ IDEA 13.1.4
+- IntelliJ IDEA 13.1.5
 
 
 
