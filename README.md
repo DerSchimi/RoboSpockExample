@@ -1,4 +1,4 @@
-**Travis CI Build:** [![Build Status](https://travis-ci.org/DerSchimi/RoboSpockExample.svg?branch=master)
+**Travis CI Build:** [![Build Status](https://travis-ci.org/DerSchimi/RoboSpockExample.svg?branch=master)]
 
 RoboSpockExample
 ================
