@@ -1,3 +1,5 @@
+**Travis CI Build:** [![Build Status](https://travis-ci.org/DerSchimi/RoboSpockExample.svg?branch=master)
+
 RoboSpockExample
 ================
 This is a simplified App Library Setup I use for some of my apps (ex: Battery Temperature guard: http://goo.gl/36srQ2).
